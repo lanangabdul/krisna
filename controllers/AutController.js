@@ -3,14 +3,6 @@ const jwt = require("jsonwebtoken");
 const ApiError = require("../utils/ApiError");
 const User = require("../models/user_model");
 
-const getData = async (req, res, next) => {
-    try {
-        res.send('hello world');
-    } catch (error) {
-        next(new ApiError(error.message))
-    }
-}
-
 const login = async (req, res, next) => {
     try {
         let { email, password } = req.body;
@@ -77,6 +69,5 @@ const register = async(req,res,next) =>{
 
 module.exports = {
     login,
-    getData,
     register
 }
